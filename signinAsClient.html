@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-In As Client</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+   
+</style>
+<body>
+    <div class=" relative h-[100vh] w-full flex bg-[url('bg-signasclient.jpg')] contrast-125 z-10 ">
+        <img src="lawyer-1.png" class="absolute h-[90vh] w-[30vw] top-[9.7%] left-[8%] contrast-75 drop-shadow-lg"  alt="">
+        <div class="box relative left-[54%] top-2 border-2 border-[#d1b068] h-[98vh] w-[44.5vw] rounded-2xl shadow-2xl shadow-black">
+            <img src="logo.png" class="h-[12vh] w-[6vw] absolute left-[42%] top-[7%]" alt="">
+            <h1 class="text-2xl font-serif font-semibold text-[#d1b068] relative left-[35%] w-[15vw] top-32">Create an account</h1>
+            <div class="sigingoption bg-black  py-3.5 border-2 border-[#d1b068] h-[8vh] w-[25vw] absolute left-[22%] top-[25%] rounded-lg hover:scale-105"><h2 class="text-[#d1b068] font-sans text-lg font-semibold relative left-12" for="email">Create an account with Google</h2>
+            <img src="google.png" alt="" class="absolute left-[82%] top-4 h-[3vh] w-[1.5vw] "></div>
+                <div class="border-b-2 border-[#d1b068] w-[15vw] absolute left-[11%] top-[38.3%]"></div>
+                <h3 class="text-[#d1b068] text-xl font-roboto font-semibold absolute left-[47.5%] top-[36%]">or</h3>
+                <div class="border-b-2 border-[#d1b068] w-[14.7vw] absolute left-[54%] top-[38.3%]"></div>
+
+                <div class="absolute left-[12%] top-[41%]">
+                    <label for="Email" class="text-[#d1b068] font-sans text-sm font-semibold  left-12">Email Address</label>
+                    <input type="text" placeholder="Enter your Email" class="border-2 border-[#d1b068]  bg-inherit rounded-md w-[33vw] p-2 absolute top-8 left-[2%] text-white font-serif">
+                </div>
+
+                <div class="absolute left-[12%] top-[53%]">
+                    <label for="name" class="text-[#d1b068] font-sans text-sm font-semibold  left-12">Fullname</label>
+                    <input type="text" placeholder="Enter your name" class="border-2 border-[#d1b068]  bg-inherit rounded-md w-[33vw] p-2 absolute top-8 left-[2%] text-white font-serif">
+                </div>
+
+                <div class="absolute left-[12%] top-[66%]">
+                    <label for="password" class="text-[#d1b068] font-sans text-sm font-semibold  left-12">Password</label>
+                    <input type="password" placeholder="Enter your password" class="border-2 border-[#d1b068]  bg-inherit rounded-md w-[33vw] p-2 absolute top-8 left-[2%] text-white font-serif">
+                </div>
+
+                <button type="submit" class="w-[32.6vw] bg-[#d1b068] text-black font-mono font-semibold hover:scale-105 hover:bg-[#897343] rounded-2xl p-2 absolute left-[13%] top-[79%] border-onset">Create an account</button>
+                <h3 class="absolute font-serif text-sm text-white left-[35%] top-[86%]">Already have an account?<a href="#"></h3><h3 class="text-[#d1b068] text-sm font-serif font-semibold absolute left-[59%] top-[86%]">Login</h3></a>
+        </div>
+
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js" integrity="sha512-lhK7xTsFM6DPXOtQQyPe+NmpoFEheKDHjM/5QzpFRiE1KySgtBfEzYz4XowvB+CAWcBLBGWinhh41uNaOtrSZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.tailwindcss.com/"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const submit = document.getElementById("submit");
+            const submitButton = document.getElementById("submitButton");
+        
+            submit.addEventListener("click", function () {
+                submit.value = ""; // Clear the input field
+            });
+        });
+    </script>
+</body>
+</html>
