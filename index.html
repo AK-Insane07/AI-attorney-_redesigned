@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Attorney</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+        .box1{
+            transition: 2s ease-out;
+            animation: ani1 2s ease-in-out;
+        }
+        @keyframes ani1{
+            0%{
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(20px);
+            }
+        }
+        .lawyer1{
+            transition: 2s ease-out;
+            animation: ani1 2s ease-in-out;
+        }
+        @keyframes ani1{
+            0%{
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+        .intro1{
+            transition: 2s ease-out;
+            animation: ani3 2s ease-in-out;
+        }
+        @keyframes ani3{
+            0%{
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+        .input-line {
+            background-color: #161d27 ;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            outline: none;
+            width: 100%;
+            padding: 8px 0;
+            transition: border-color 0.3s ease-in-out;
+        }
+        .input-line-2{
+            background-color: #161d27 ;
+            border: none;
+            border: 3px solid #ccc;
+            outline: none;
+            width: 100%;
+            padding: 8px 0;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        .input-line:focus, .input-line:not(:placeholder-shown) {
+            border-color: white;
+            border-radius: 2px;
+            border-width: 2px; /* Change to your desired focus color */
+        }
+
+        .input-label {
+            position: absolute;
+            top: 12px;
+            left: 0;
+            color:white;
+            transition: top 0.3s ease-in-out, font-size 0.3s ease-in-out, color 0.3s ease-in-out;
+            background-color: #161d27;
+        }
+
+        .input-line:focus + .input-label,
+        .input-line:not(:placeholder-shown) + .input-label {
+            top: -10px;
+            font-size: 12px;
+            color:white; /* Change to your desired focus color */
+        }
+        
+        
+        </style>
+</head>
+<body>
+    <div class="scroll-smooth">
+        <div class="h-[100vh]  bg-black scroll-smooth">
+            <img src="bg-2.jpg" class="absolute h-[100vh] w-[100vw] blur-[2px] hue-rotate-15 contrast-75 " alt="">
+            <div class="border-t-2 border-gray-600 w-[85%] absolute left-[6%] top-24"></div> 
+            <!-- <svg class="absolute h-1 w-38 top-20" viewBox="0 0 32 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="2" x2="32" y2="2" stroke="gray" stroke-width="4" />
+            </svg> -->
+            
+            <nav class="absolute w-full "> 
+                
+                <ul class="flex p-2 absolute top-24 left-[5%] ">
+                    <li class="p-3 text-[#D1B06B] text-lg hover:underline hover:underline-offset-4 hover:underline-[#D1B06B] transition-transform duration-300 transform hover:scale-110">Home</li>
+                    <li class="p-3 px-4 text-lg text-white transition-transform duration-300 transform hover:underline hover:underline-offset-4 hover:scale-110">About Us</li>
+                    
+                    <li class="p-3 px-4 text-lg text-white transition-transform duration-300 transform hover:underline hover:underline-offset-4 hover:scale-110">Contact Us</li>
+                        
+
+                    <li class="absolute text-lg text-white transition-transform duration-300 transform hover:underline hover:underline-offset-4 hover:scale-110 bottom-1 left-[95%]"> <div class=" relativeinline-block dropdown">
+                            <button class="block px-6 py-4 text-center text-whitefocus:outline-none">
+                                Pages <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="absolute z-10 hidden  py-2 mt-2 text-black shadow-lg bg-inherit divide-solid dropdown-content w-[14vw]">
+                                <a href="getlegalAssist.html" class="block px-4 py-2 text-white hover:bg-gray-800">Get Legal Assistant</a>
+                                <!-- <a href="#" class="block px-4 py-2 text-white hover:bg-gray-800 ">Win predictor</a> -->
+                                <a href="Bookanappointment.html" class="block px-4 py-2 text-white hover:bg-gray-800">Book An Appointment</a>
+                        </div>
+                    
+                    </li>
+
+                    <li class="absolute text-lg text-white transition-transform duration-300 transform hover:underline hover:underline-offset-4 hover:scale-110 bottom-1 left-[120%]"> <div class=" relativeinline-block dropdown2">
+                        <button class="block px-6 py-4 text-center text-whitefocus:outline-none">
+                            Register <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="absolute z-10 hidden  py-2 mt-2 text-black shadow-lg bg-inherit divide-solid dropdown-content2 w-[18vw]">
+                            <a href="signinAsClient.html" class="block px-4 py-2 text-white hover:bg-gray-800">As Client</a>
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-gray-800 ">As legal-service-Provider</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-200"></a>      
+                    </div>
+                
+                </li>
+                       
+                    
+
+                    </ul>
+                <div class="border-t-2 border-gray-600 w-[85%] absolute left-[6%] top-40"></div> 
+                
+                <img src="logo.png" class="w-[6vw] h-[12vh] absolute left-[6%]  " alt="">
+                <h1 class="text-4xl text-white font-serif font-semibold absolute top-7 left-[13%]" >AI-Attorney</h1>
+            </nav>
+            <img src="lawyer-1.png" class="lawyer1 z-2 absolute left-[70%] top-[30%] h-[70vh] object-cover transition-transform duration-300 transform hover:scale-110 stroke-slate-800 " alt="">
+            <h1 class=" intro1 z-3 absolute font-serif text-white font-bold text-4xl left-[10%] top-[40%] stroke-1 stroke-slate-800">Welcome to AI-Attorney</h1> <h1 class="intro1 z-3 absolute font-cormorantgaramond text-white font-bold text-2xl left-[27%] top-[45%] stroke-slate-800">~Your Legal Solution Provider</h1>
+            <p class="intro1 text-[#d1b068] z-2 absolute w-[35vw] top-[51%] left-[10%] font-semibold">Are you facing legal challenges or seeking clarity on legal matters in India? Look no further than AI-Attorney, your trusted partner in navigating the complexities of Indian law and court systems. We leverage cutting-edge artificial intelligence to provide comprehensive legal assistance tailored to your needs.</p>
+            
+            <img src="phone.png" class="absolute h-7 left-[60%] top-[16%] animate-pulse" alt="">
+            <p class="text-[#d1b068] font-semibold absolute left-[63%] top-[14%] animate-pulse">Call us on: <br></p>
+            <p class="text-white font-semibold absolute left-[63%] top-[17%] animate-pulse">+91-9898676788</p>
+            <img src="mail.png" class="absolute h-7 left-[75%] top-[16%]" alt="">
+            <p class="text-[#d1b068] font-semibold absolute left-[78%] top-[14%] animate-pulse">Email us: <br> </p>
+            <p class="text-white font-semibold absolute left-[78%] top-[17%] animate-pulse" >youraiattorney@gmail.com </p>
+
+            <button class="intro1 cursor-pointer font-semibold overflow-hidden relative z-100 border-2 bg-[#d1b068] border-[#d1b068] group px-8 py-2 top-[70%] left-[10%]">
+                <span class=" relative z-10 text-white group-hover:text-[#d1b068] text-xl duration-500">Try Now!</span>
+                <span class="absolute top-0 w-full h-full duration-500 -rotate-45 bg-white -left-32 group-hover:rotate-0 group-hover:left-0"></span>
+                <span class="absolute top-0 w-full h-full duration-500 -rotate-45 bg-white -right-32 group-hover:rotate-0 group-hover:right-0"></span>
+              </button>
+            </div>
+            <div class="sec2  h-[110vh] bg-black w-full mix-blend-multiply scroll-smooth">
+                <video src="v2.mp4 " class="blur-[6px]   " autoplay loop muted></video>
+                <img src="sec2-img2.jpg" class="h-[40vh] w-[30vw] absolute left-[10%] z-3 border-4 border-[#d1b068] shadow-2xl bottom-[-50%]">
+                <img src="sec2-img1.jpg" class="h-[40vh] w-[30vw] absolute left-[10%] z-3 hadow-lg bottom-[-100%] border-4 border-[#d1b068]">
+               <h1 class="text-white text-4xl absolute left-[47%] bottom-[-17%] z-3 ">Instant Answers to Legal Queries</h1>
+               <p class="text-[#d1b068] text-md absolute left-[47%] bottom-[-30%] z-3 w-[50vw]">Have a burning legal question? Our AI-powered platform is equipped to provide instant, accurate answers to a wide range of legal queries. Whether you're unsure about property rights, contract laws, or procedural requirements in Indian courts, AI-Attorney has you covered.</p>
+
+               <div class="border-t-2 border-gray-600 w-[52%] absolute left-[47%] bottom-[-35%]"></div>
+
+               <h1 class="text-white text-4xl absolute left-[47%] bottom-[-43%] z-3 ">Personalized Legal Guidance</h1> 
+               <p class="text-[#d1b068] text-md absolute left-[47%] bottom-[-56%] z-3 w-[50vw] ">Navigating the Indian legal landscape can be daunting. AI-Attorney offers personalized legal guidance based on your specific situation. Our AI algorithms analyze your inputs to deliver tailored recommendations and actionable insights.</p>
+
+               <div class="border-t-2 border-gray-600 w-[52%] absolute left-[47%] bottom-[-61%]"></div>
+
+               <h1 class="text-white text-4xl absolute left-[47%] bottom-[-68%] z-3 ">Court Case Predictions</h1> 
+                <p class="text-[#d1b068] text-md absolute left-[47%] bottom-[-80%] z-3 w-[50vw] ">Curious about the potential outcomes of your court case? Our AI technology can predict the likelihood of success based on historical data and legal precedents. Make informed decisions with AI-Attorney's court case prediction feature.</p>
+
+                <div class="box1sec2 bg-[#d1b068] h-[12vh] w-[12vw] absolute left-[50%] bottom-[-95%] shadow-xl shadow-black border-4 rounded-md border-white z-4 hover:scale-110  "><img src="notebook.png" class="h-[8vh] relative top-3 left-4" alt=""><p class="text-white font-semibold font-serif absolute left-[50%] top-4">90% Case <br> Success</p></div>
+
+                <div class="box1sec2 bg-white h-[12vh] w-[12vw] absolute left-[70%] bottom-[-95%] shadow-xl shadow-black border-4 rounded-md border-[#d1b068] z-4 hover:scale-110  "><img src="law-icon.png" alt="" class="h-[8vh] relative top-3 left-2.5"><p class="text-[#d1b068] font-semibold font-serif absolute left-[42%] top-4">Experinced <br>Lawyer's</p></div>
+                
+            </div>
+            
+        
+</div>
+
+<div class="absolute w-full border-t-4 border-gray-600 "></div>
+
+<div class="sec3 bg-white shadow-2xl shadow-black w-full h-[90vh] scroll-smooth">
+    <h1 class="font-serif relative left-[37%] top-[17%] text-5xl z-4 w-[30vw]">If you're in trouble</h1><h1 class="font-serif relative   left-[41%] top-[19%] text-5xl w-[25vw]">we can help.</h1>
+    <img src="sec3-img1.jpg" class="h-[56vh] relative top-[23%]  left-[36%]" alt="">
+
+    <div class="box1 border-4 border-white bg-[#4b4b4b]  border-double shadow-2xl shadow-black h-[20vh] w-[30vw] rounded-2xl relative left-[3%] top-[-52%] transition-all duration-400 ease-in-out "><p class="p-3 py-4 font-serif text-lg text-white text-semibold">Accuracy and Reliability: Our AI algorithms are continuously trained on vast legal datasets, ensuring high accuracy and reliability in every response.</p></div>
+
+    <div class="box1 border-4 border-white bg-[#4b4b4b]  border-double shadow-2xl shadow-black h-[20vh] w-[30vw] rounded-2xl relative left-[3%] top-[-50%] ">
+        <p class="p-3 py-3 font-serif text-lg text-white text-semibold">Accessible Anytime, Anywhere: AI-Attorney is available 24/7 via our user-friendly website and mobile app, allowing you to seek legal assistance whenever you need it.</p>
+    </div>
+
+    <div class="box1 border-4 border-white bg-[#4b4b4b] shadow-2xl shadow-black border-double h-[20vh] w-[30vw] rounded-2xl relative left-[3%] top-[-48%] ">
+        <p class="p-3 py-3 font-serif text-lg text-white text-semibold">Affordable and Transparent: Say goodbye to exorbitant legal fees. AI-Attorney offers affordable pricing plans with transparent billing, making legal assistance accessible to everyone.
+        </p>
+    </div>
+
+ 
+     <h1 class=" text-black text-4xl font-serif  relative left-[68%] top-[-118%] w-[30vw]">We are Specialised and Experinced</h1>
+     <!-- <div class="exps bg-[#3838383c] border-4 rounded-xl border-double w-[30vw] h-[40vh] border-black relative shadow-xl">haa</div> -->
+    <img src="box2-sec3.png" class="h-[50vh] w-[30vw] border-4 border-black border-double shadow-md shadow-black relative left-[68%] top-[-116%] rounded-xl" alt="">
+    
+    
+
+</div>
+<div class="absolute w-full border-t-4 border-gray-600 "></div>
+
+<div class="sec4 bg-[#161d27] w-full h-[100vh]"><h1 class="text-white  text-4xl font-serif relative top-[6%] left-[6%] w-[25vw] underline underline-offset-4 scroll-smooth">Explore Our Services</h1>
+    <img src="white-line.png" class="relative left-[30%]" alt="">
+    <p class="text-[#d1b068] relative left-[36%] bottom-12 w-[60vw]">There are many plots and services Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, ipsa. Cupiditate tempore laborum, aliquam quidem sapiente reprehenderit ipsa quam alias doloribus, ratione eaque!</p>
+  
+    <div class="prt1 bg-[#252948] w-[25vw] h-[35vh] border-2 border-[#d1b068] relative left-[9%] top-[2%] shadow-xl shadow-black hover:scale-105 rounded-md">
+        <h1 class="font-serif text-2xl absolute text-white left-[9%] top-[12%]">Business Law</h1>
+        <p class="font-serif text-sm absolute text-white left-[9%] top-[27%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet et sapiente quo, autem veritatis quae aspernatur inventore magnam fugit necessitatibus deserunt ad qui.</p>
+        <div class="border-t-2 border-gray-700 w-[21.5vw] absolute top-[64%] left-[8%]"></div>
+        <img src="suitcase.png" class="absolute left-[9%] top-[68%]">
+        <div class="bg-[#161d27] hover:bg-[#d1b068] w-[10vw] h-[7vh] rounded-md  border-2 border-[#d1b068]  shadow-md shadow-black absolute left-[45%] top-[72%]"><h1 class="text-[#d1b068] hover:text-[#161d27] font-serif absolute left-10 top-2 text-lg w-[15vw]  underline underline-offset-2">Explore</h1></div>
+    </div>
+
+    <div class="prt2 bg-[#252948] w-[25vw] h-[35vh] border-2 border-[#d1b068] relative left-[39%] top-[-33%] shadow-xl shadow-black hover:scale-105 rounded-md">
+        <h1 class="font-serif text-2xl absolute text-white left-[9%] top-[12%]">Construction Law</h1>
+        <p class="font-serif text-sm absolute text-white left-[9%] top-[27%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet et sapiente quo, autem veritatis quae aspernatur inventore magnam fugit necessitatibus deserunt ad qui.</p>
+        <div class="border-t-2 border-gray-700 w-[21.5vw] absolute top-[64%] left-[8%]"></div>
+        <img src="building.png" class="absolute left-[9%] top-[68%]" alt="">
+        <div class="bg-[#161d27] hover:bg-[#d1b068] w-[10vw] h-[7vh] rounded-md  border-2 border-[#d1b068]  shadow-md shadow-black absolute left-[45%] top-[72%]"><h1 class="text-[#d1b068] hover:text-[#161d27] font-serif absolute left-10 top-2 text-lg w-[15vw]  underline underline-offset-2">Explore</h1></div>
+    </div>
+    
+
+    <div class="prt3 bg-[#252948] w-[25vw] h-[35vh] border-2 border-[#d1b068] relative left-[69%] top-[-68%] shadow-xl shadow-black hover:scale-105 rounded-md">
+        <h1 class="font-serif text-2xl absolute text-white left-[9%] top-[12%]">Car Accident</h1>
+        <p class="font-serif text-sm absolute text-white left-[9%] top-[27%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet et sapiente quo, autem veritatis quae aspernatur inventore magnam fugit necessitatibus deserunt ad qui.</p>
+        <div class="border-t-2 border-gray-700 w-[21.5vw] absolute top-[64%] left-[8%]"></div>
+        <img src="truck gold.png" class="absolute  left-[9%] top-[68%] h-[8vh]" alt="">
+        <div class="bg-[#161d27] hover:bg-[#d1b068] w-[10vw] h-[7vh] rounded-md  border-2 border-[#d1b068]  shadow-md shadow-black absolute left-[45%] top-[72%]"><h1 class="text-[#d1b068] hover:text-[#161d27] font-serif absolute left-10 top-2 text-lg w-[15vw]  underline underline-offset-2">Explore</h1></div>
+    </div>
+    
+
+    <div class="prt4 bg-[#252948] w-[25vw] h-[35vh] border-2 border-[#d1b068] relative left-[9%] top-[-63%] shadow-xl shadow-black hover:scale-105 rounded-md">
+        <h1 class="font-serif text-2xl absolute text-white left-[9%] top-[12%]">Wrongful Death</h1>
+        <p class="font-serif text-sm absolute text-white left-[9%] top-[27%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet et sapiente quo, autem veritatis quae aspernatur inventore magnam fugit necessitatibus deserunt ad qui.</p>
+        <div class="border-t-2 border-gray-700 w-[21.5vw] absolute top-[64%] left-[8%]"></div>
+        <img src="grave gold.png" class="absolute left-[9%] top-[68%]" alt="">
+        <div class="bg-[#161d27] hover:bg-[#d1b068] w-[10vw] h-[7vh] rounded-md  border-2 border-[#d1b068]  shadow-md shadow-black absolute left-[45%] top-[72%]"><h1 class="text-[#d1b068] hover:text-[#161d27] font-serif absolute left-10 top-2 text-lg w-[15vw]  underline underline-offset-2">Explore</h1></div>
+    </div>
+    
+
+
+    <div class="prt5 bg-[#252948] w-[25vw] h-[35vh] border-2 border-[#d1b068] relative left-[39%] top-[-98%] shadow-xl shadow-black hover:scale-105 rounded-md">
+        <h1 class="font-serif text-2xl absolute text-white left-[9%] top-[12%]">Criminal Law</h1>
+        <p class="font-serif text-sm absolute text-white left-[9%] top-[27%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet et sapiente quo, autem veritatis quae aspernatur inventore magnam fugit necessitatibus deserunt ad qui.</p>
+        <div class="border-t-2 border-gray-700 w-[21.5vw] absolute top-[64%] left-[8%]"></div>
+        <img src="handcuff gold.png" class="absolute left-[9%] top-[70%] h-[8vh]" alt="">
+        <div class="bg-[#161d27] hover:bg-[#d1b068] w-[10vw] h-[7vh] rounded-md  border-2 border-[#d1b068]  shadow-md shadow-black absolute left-[45%] top-[72%]"><h1 class="text-[#d1b068] hover:text-[#161d27] font-serif absolute left-10 top-2 text-lg w-[15vw]  underline underline-offset-2">Explore</h1></div>
+    </div>
+    
+
+    <div class="prt6 bg-[#252948] w-[25vw] h-[35vh] border-2 border-[#d1b068] relative left-[69%] top-[-133%] shadow-xl shadow-black hover:scale-105 rounded-md">
+        <h1 class="font-serif text-2xl absolute text-white left-[9%] top-[12%]">Family Law</h1>
+        <p class="font-serif text-sm absolute text-white left-[9%] top-[27%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet et sapiente quo, autem veritatis quae aspernatur inventore magnam fugit necessitatibus deserunt ad qui.</p>
+        <div class="border-t-2 border-gray-700 w-[21.5vw] absolute top-[64%] left-[8%]"></div>
+        <img src="family.png" class="absolute left-[9%] top-[68%]" alt="">
+        <div class="bg-[#161d27] hover:bg-[#d1b068] w-[10vw] h-[7vh] rounded-md  border-2 border-[#d1b068]  shadow-md shadow-black absolute left-[45%] top-[72%]"><h1 class="text-[#d1b068] hover:text-[#161d27] font-serif absolute left-10 top-2 text-lg w-[15vw]  underline underline-offset-2">Explore</h1></div>
+    </div>
+
+
+    </div>
+    <div class="sec5 h-[100vh]  relative scroll-smooth ">
+        <img src="sec2-img2.jpg" class="sec5img absolute h-[100vh] w-full filter-none" alt="">
+        <div class="absolute w-[70%] h-[70%] bg-[#161d27] left-[14%] top-[14%] border-2 border-slate-500 shadow-lg shadow-black">
+            <form action="">
+                <div class="relative  left-[7%] top-12 mb-4 ">
+                    <input type="text" id="fullName" name="fullName" class="input-line w-[25vw] h-[5vh] bg-[#161d27] text-white text-md " required>
+                    <label for="fullName" class="text-xl text-white input-label">Full Name</label>
+                </div>
+                
+                <div class="relative mb-4 left-[55%] w-[32vw] ">
+                    <input type="email" id="email" name="email" class="input-line w-[25vw] h-[5vh] bg-[#161d27] text-white text-md" required>
+                    <label for="email" class="text-xl text-white input-label">Email</label>
+                </div>
+               
+                <div class="relative mb-4 left-[7%] top-10">
+                    <div class="flex items-center">
+                        <select class="border border-gray-300 rounded-l-md p-2.5 bg-[#161d27] text-white focus:outline-none absolute top-6">
+                            <option value="+1">+1 (USA)</option>
+                            <option value="+44">+44 (UK)</option>
+                            <option value="+91">+91 (India)</option>
+                            <!-- Add more country codes as needed -->
+                        </select>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" class="input-line rounded-r-md w-[17vw] h-[5vh] bg-[#161d27] py-2  text-white text-md relative left-[12%] top-8 " required>
+                        <label for="phoneNumber" class="absolute text-xl text-white input-label ">Phone Number</label>
+                    </div>
+                </div>
+     
+                <div class="relative mb-4 left-[7%] top-24">
+                    <input type="text" id="subject" name="subject" class="input-line w-[25vw] h-[5vh] bg-[#161d27] text-white text-md " required>
+                    <label for="subject" class="input-label">Subject</label>
+                </div>
+                
+                <div class="relative mb-4 left-[7%] top-28">
+                    <textarea id="message" name="message" class="input-line-2 h-36  text-white resize-none w-[46vw] absolute top-3 " required></textarea>
+                    <label for="message" class="text-sm text-white input-label">Message</label>
+                </div>
+                
+                <button class=" cursor-pointer font-bold overflow-hidden  z-4 border-2 bg-[#d1b068] border-[#d1b068] group px-3 py-2 absolute left-[80%] top-[84%] shadow-xl shadow-black rounded-md">
+                    <span class=" relative z-10 text-[#161d27] group-hover:text-[#d1b068] text-lg duration-500">Get Appontment</span>
+                    <span class="absolute w-full h-full bg-[#161d27] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
+                    <span class="absolute w-full h-full bg-[#161d27] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+                  </button>
+
+                  <!-- <div class="absolute mb-4 left-[60%] top-[84%]">
+                    <label for="fileInput" class="cursor-pointer border-2 border-[#d1b068] hover:bg-[#d1b068] hover:scale-105 text-[#d1b068] hover:text-[#161d27] font-bold py-2 px-4 text-lg rounded inline-block">
+                        Upload File
+                      </label>
+                      <input id="fileInput" type="file" class="hidden" onchange="handleFileChange(event)">
+                </div>   -->
+         
+            </form>
+        </div>
+    </div>
+
+    <div class="absolute w-full border-t-2 border-gray-600 "></div>
+
+    <!-- <footer class="bg-[#161d27]  w-full h-[60vh] z-5">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quibusdam hic aliquid ea eligendi officia dolores odio, quasi iusto illo debitis labore veniam.
+        </h1>
+
+    </footer> -->
+
+    <footer class="bg-[#161d27] text-white py-8 ">
+        <div class="container px-4 mx-auto">
+            <div class="flex flex-col items-center justify-between md:flex-row">
+                <!-- Logo or Branding -->
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-2xl font-bold">AI-Attorney</h2>
+                    <p class="text-sm">Your Legal Solution Provider</p>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="mb-4 md:mb-0">
+                    <ul class="flex space-x-4">
+                        <li><a href="#" class="hover:text-gray-300">Home</a></li>
+                        <li><a href="#" class="hover:text-gray-300">Services</a></li>
+                        <li><a href="#" class="hover:text-gray-300">About Us</a></li>
+                        <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Contact Information -->
+                <div>
+                    <p class="mb-2 text-sm">Contact Us:</p>
+                    <p class="text-sm">Email: contact@aiattorney.com</p>
+                    <p class="text-sm">Phone: +1234567890</p>
+                </div>
+            </div>
+
+            <!-- Divider Line -->
+            <hr class="my-4 border-gray-700">
+
+            <!-- Social Media Links -->
+            <div class="flex items-center justify-center space-x-4">
+                <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome Icons (if used) -->
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js"></script>
+
+
+
+
+
+
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js" integrity="sha512-lhK7xTsFM6DPXOtQQyPe+NmpoFEheKDHjM/5QzpFRiE1KySgtBfEzYz4XowvB+CAWcBLBGWinhh41uNaOtrSZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    
+    <script>
+        const inputFields = document.querySelectorAll('.input-field');
+
+        inputFields.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.nextElementSibling.classList.add('active');
+            });
+
+            input.addEventListener('blur', () => {
+                if (input.value === '') {
+                    input.nextElementSibling.classList.remove('active');
+                }
+            });
+
+            // Check input value on page load
+            if (input.value !== '') {
+                input.nextElementSibling.classList.add('active');
+            }
+        });
+    </script>
+    <script>
+        function handleFileChange(event) {
+          const fileInput = event.target;
+          const fileName = fileInput.files[0].name;
+          console.log("Selected file:", fileName);
+          // You can add further logic here, such as displaying the file name or uploading the file
+        }
+      </script>
+
+      <script>
+        // JavaScript for toggling dropdown menu
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownButton = document.querySelector('.dropdown');
+            const dropdownMenu = document.querySelector('.dropdown-content');
+
+            dropdownButton.addEventListener('mouseenter', () => {
+                dropdownMenu.classList.remove('hidden');
+            });
+
+            dropdownButton.addEventListener('mouseleave', () => {
+                dropdownMenu.classList.add('hidden');
+            });
+
+            dropdownMenu.addEventListener('mouseenter', () => {
+                dropdownMenu.classList.remove('hidden');
+            });
+
+            dropdownMenu.addEventListener('mouseleave', () => {
+                dropdownMenu.classList.add('hidden');
+            });
+        });
+    </script>
+
+    
+    <script>
+        // JavaScript for toggling dropdown menu
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownButton = document.querySelector('.dropdown2');
+            const dropdownMenu = document.querySelector('.dropdown-content2');
+
+            dropdownButton.addEventListener('mouseenter', () => {
+                dropdownMenu.classList.remove('hidden');
+            });
+
+            dropdownButton.addEventListener('mouseleave', () => {
+                dropdownMenu.classList.add('hidden');
+            });
+
+            dropdownMenu.addEventListener('mouseenter', () => {
+                dropdownMenu.classList.remove('hidden');
+            });
+
+            dropdownMenu.addEventListener('mouseleave', () => {
+                dropdownMenu.classList.add('hidden');
+            });
+        });
+    </script>
+
+   
+      
+    
+</body>
+</html>
